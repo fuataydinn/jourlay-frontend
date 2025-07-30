@@ -1,0 +1,253 @@
+/* Contact.css - İletişim sayfası stilleri */
+
+.contact-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.contact-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* Header */
+.contact-header {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.contact-header h1 {
+  font-size: 2.5rem;
+  margin: 0 0 10px 0;
+  font-weight: bold;
+}
+
+.contact-header p {
+  font-size: 1.1rem;
+  margin: 0;
+  opacity: 0.9;
+}
+
+/* İletişim Bilgileri */
+.contact-info {
+  padding: 40px 20px;
+  background: #f8f9fa;
+}
+
+.info-card {
+  background: white;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.info-card h3 {
+  color: #333;
+  margin-bottom: 25px;
+  font-size: 1.5rem;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin: 15px 0;
+  padding: 15px;
+  background: #f1f3f4;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  color: #555;
+  transition: all 0.3s ease;
+}
+
+.info-item:hover {
+  background: #e3f2fd;
+  transform: translateY(-2px);
+}
+
+.info-item .icon {
+  font-size: 1.5rem;
+}
+
+/* Sosyal Medya */
+.social-media {
+  padding: 40px 20px;
+}
+
+.social-media h3 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+  font-size: 1.5rem;
+}
+
+.social-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.social-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.social-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.social-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.social-icon {
+  font-size: 1.5rem;
+}
+
+.external {
+  font-size: 1rem;
+}
+
+/* Sosyal medya renkleri */
+.facebook {
+  background: linear-gradient(135deg, #3b5998, #8b9dc3);
+}
+
+.instagram {
+  background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+}
+
+.youtube {
+  background: linear-gradient(135deg, #ff0000, #cc0000);
+}
+
+.twitter {
+  background: linear-gradient(135deg, #1da1f2, #0d95e8);
+}
+
+/* Loading */
+.loading {
+  text-align: center;
+  padding: 100px 20px;
+  color: white;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(255, 255, 255, 0.3);
+  border-top: 5px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 20px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Error */
+.error {
+  text-align: center;
+  padding: 100px 20px;
+  color: white;
+}
+
+.error h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.retry-btn {
+  background: #4facfe;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background 0.3s ease;
+}
+
+.retry-btn:hover {
+  background: #357abd;
+}
+
+/* No Data */
+.no-data {
+  text-align: center;
+  padding: 40px;
+  background: #f8f9fa;
+  border-radius: 10px;
+  border: 2px dashed #ddd;
+  color: #666;
+  font-style: italic;
+}
+
+/* Footer */
+.contact-footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.contact-footer p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-header h1 {
+    font-size: 2rem;
+  }
+  
+  .social-group {
+    grid-template-columns: 1fr;
+  }
+  
+  .info-item {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-container {
+    padding: 10px;
+  }
+  
+  .contact-header {
+    padding: 30px 15px;
+  }
+  
+  .contact-info,
+  .social-media {
+    padding: 30px 15px;
+  }
+}
