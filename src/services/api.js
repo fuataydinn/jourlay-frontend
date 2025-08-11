@@ -1,8 +1,8 @@
 // API servis dosyası
 import axios from 'axios';
 
-// Base URL'i tanımlayın
-const BASE_URL = 'https://localhost:44304/api';
+// Environment'a göre base URL belirleme
+const BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:8080/api';
 
 // Axios instance oluşturun
 const api = axios.create({
@@ -12,6 +12,28 @@ const api = axios.create({
     'Content-Type': 'application/json',
   }
 });
+
+// Request interceptor - istekleri loglama için
+api.interceptors.request.use(
+  (config) => {
+    console.log(`Making ${config.method.toUpperCase()} request to: ${config.baseURL}${config.url}`);
+    return config;
+  },
+  (error) => {
+    return Promise.reject(error);
+  }
+);
+
+// Response interceptor - hataları handle etmek için
+api.interceptors.response.use(
+  (response) => {
+    return response;
+  },
+  (error) => {
+    console.error('API Error:', error.response?.data || error.message);
+    return Promise.reject(error);
+  }
+);
 
 // ContactUs API servisleri
 export const contactUsService = {
